@@ -1,14 +1,3 @@
-// console.log("" == false); //true because of type coercion and check by the reference
-// console.log("" === false);//false because of check by the value
-// console.log(NaN == NaN); // false because of type coercion and check by the reference
-// console.log(NaN === NaN); // false because of check by the value
-// console.log(1 + undefined); // NaN
-// console.log(typeof typeof 1000); // typeof 1000 = number, typeof number = string
-
-// const arr = [1, 2, 3, 4, 5]
-// arr[10] = 100;
-// console.log(arr); // [1, 2, 3, 4, 5, empty × 5, 100]
-// ---------------------------------------------------------
 
 // function myFun() {
 //     "use strict"
@@ -20,6 +9,7 @@
 
 // }
 // console.log(myFun());
+// ----------------------------------------------------------------------
 
 
 // var xyz = 1 + abc
@@ -80,18 +70,13 @@
 // console.log(sum1(undefined,20)); // 120 undefined
 
 // -------------------------------------
-// console.log(null + 2) // 2
-//null: Represents "nothing" or "empty value" and is treated as 0 in arithmetic.
 
-// console.log(undefined + 2) // NaN
-//undefined: Indicates the absence of a defined value and results in NaN when involved in arithmetic operations.
-
-// -----------------------------------------------
 // let a = 5; // a=6
 // let b = a++; //b=5 post-increment operator it will update the value of a after the assignment so the value a is 6 and b is 5
 // let c = a + b;
 // console.log(c) // 11
 // -------------------------------------
+
 // var z = 30;
 // function baz() {
 //     console.log(z);
@@ -110,6 +95,7 @@
 // setTimeout is async function and it will execute after 1 second. it the reference of the element not the value of the element.
 // here b=80 declared before the setTimeout function while completion of time b is overwritten by b=100. so it prints b = 100
 // -------------------------------------
+
 // let x = 10;
 // function foo() {
 //   console.log(x);
