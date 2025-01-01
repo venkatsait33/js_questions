@@ -1,0 +1,65 @@
+what is npm.
+ans: npm- node package manager is a library where all code is stored and can be used in our project.
+
+is react is a library or framework.
+ans: react is a library.
+
+what is jsx.
+ans: jsx-javaScript xml where we write the html code in between the curly braces and converted into js.
+
+why do we use vDom and how does it work.
+ans: VirtualDom is a copy of a real dom and it updated the Vdom as components, if there is any particular component it update only that component and not the whole component.
+
+diff b/w dom and vDom.
+ans:Dom-document object model is a programming interface for web documents. VDom is a virtual representation of real dom. if there is any change or update it will re-render the whole dom but in vDom it will re-render only the updated component.
+
+why do use the fragments.
+ans:Fragments are used to wrap the multiple elements in a single component.i will not create a new element in the dom.
+
+diff b/w package.json and package-lock.json.
+ans: package.json is a file which contains the information about the project and package-lock.json is a file which contains the information about the dependencies and their versions.
+
+what is the state in react.
+ans: State is a built-in object in react which contains the data and it is mutable.
+
+what is props in react.
+ans: Props is a built-in object in react which contains the data and it is immutable.
+
+what is the difference between state and props.
+ans: State is a built-in object in react which contains the data and it is mutable. Props is a built-in object in react which contains the data and it is immutable.
+
+why the key used for map or filter function rendering data and showing the list items.
+what is the react component.
+how do optimize the react application.
+
+
+What is Diffing Algorithm?
+ans: It is a mechanism to compare the old virtual DOM with the new virtual DOM and find out the differences between them. It is a mechanism to optimize the performance of the application.
+
+ReactJS Reconciliation
+ans:React Reconciliation is the process through which React updates the Browser DOM. It makes the DOM updates faster in React. It updates the virtual DOM first and then uses the diffing algorithm to make efficient and optimized updates in the Real DOM.
+
+
+
+what is life cycles in the functional components.
+how can we perform the life cycles in functional components.
+what is df b/w stateful and stateless components.
+
+diff b/w props and state.
+explain the state and props in react.
+
+what are the hooks and why do we use it.
+what is the useState hook and why do we use it.
+what is the useEffect hook and why do we use it.
+what is the context and why do we use it.
+diff b/w useMemo and useCallback hooks.
+why do we useRef hook.
+
+
+what is the redux and its functions or components.
+what is the useReducer hook and why do we use it.
+
+what are the react-router-dom functions used in the react.
+ans: BrowserRouter, Routes, Route, Link, useNavigate, useParms,
+
+
