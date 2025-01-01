@@ -1,0 +1,66 @@
+let count = 0;
+const nums = [0, 1, 2, 3];
+
+nums.forEach((num) => {
+    if (num) {
+        count = count + 1;
+    }
+})
+
+console.log(count);
+
+### Code Breakdown:
+```javascript
+let count = 0; 
+const nums = [0, 1, 2, 3]; 
+```
+    - ** `let count = 0;` 
+    **: A variable `count` is initialized to`0`.This will be used to count how many numbers in the`nums` array pass a specific condition.
+- ** `const nums = [0, 1, 2, 3];` **: An array named `nums` is defined containing four numbers: `0`, `1`, `2`, and`3`.
+
+---
+
+### Using `forEach`:
+```javascript
+nums.forEach((num) => {
+    if (num) {
+        count = count + 1;
+    }
+})
+```
+    - ** `nums.forEach((num) => { ... })` **: The `forEach` method loops through each element of the `nums` array.During each iteration, the current element is assigned to the variable`num`.
+  
+- ** `if (num)` **: This is a conditional check.In JavaScript, `0` is considered "falsy"(a value treated as `false` in a boolean context), while all other numbers are "truthy"(treated as `true`).
+
+  - For`num = 0`: The condition `if (num)` evaluates to`false`, so the code inside the `if` block is not executed.
+  - For`num = 1, 2, or 3`: The condition `if (num)` evaluates to`true`, so the code inside the `if` block runs.
+
+- ** `count = count + 1;` **: Each time the condition `if (num)` is true, `1` is added to`count`.
+
+---
+
+### Final Output:
+```javascript
+console.log(count);
+```
+    - This prints the value of `count` after the loop finishes.
+
+---
+
+### Step - by - Step Execution:
+1. Initial state: `count = 0`.
+2. Loop starts:
+- First iteration(`num = 0`): `if (num)` is`false`. `count` remains`0`.
+   - Second iteration(`num = 1`): `if (num)` is`true`. `count` becomes`1`.
+   - Third iteration(`num = 2`): `if (num)` is`true`. `count` becomes`2`.
+   - Fourth iteration(`num = 3`): `if (num)` is`true`. `count` becomes`3`.
+3. After the loop, `count` equals`3`.
+
+---
+
+### Output:
+The code outputs:
+```
+3
+```
+This represents the count of "truthy" values(non - zero numbers) in the`nums` array.

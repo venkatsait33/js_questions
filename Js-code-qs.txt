@@ -1,0 +1,210 @@
+1-
+### Code:
+```javascript
+function abc() {
+    console.log(abc.xyz);
+}
+
+abc(); // 1st call
+abc.xyz = 123;
+abc.xyz = 456;
+abc(); // 2nd call
+```
+
+### Key Points to Understand:
+1. **Functions in JavaScript are objects**: In JavaScript, functions are also objects, so you can attach properties to them, just like you would with any other object.
+
+2. **`abc.xyz` is a property of the function**: The property `xyz` is being added to the function object `abc`.
+
+---
+
+### Step-by-Step Explanation:
+
+1. **First Call (`abc()`):**
+   - The function `abc` runs.
+   - Inside the function, it tries to log the value of `abc.xyz`.
+   - At this point, `abc.xyz` has **not been defined yet**, so it prints `undefined`.
+
+2. **Setting `abc.xyz = 123`:**
+   - You assign the value `123` to the property `xyz` of the `abc` function object.
+   - Now, `abc.xyz` is `123`.
+
+3. **Updating `abc.xyz = 456`:**
+   - You change the value of `abc.xyz` to `456`.
+   - Now, `abc.xyz` is `456`.
+
+4. **Second Call (`abc()`):**
+   - The function `abc` runs again.
+   - It logs the current value of `abc.xyz`, which is now `456`.
+
+---
+
+### Output:
+```
+undefined
+456
+```
+-------------------------------------------------
+
+Here’s a simple explanation of what’s happening in this code:
+
+### Code:
+```javascript
+const num = [1, 2, 3, 4];
+num[100] = 500;
+console.log(num);
+```
+
+### Explanation:
+
+1. **Initial Array**:
+   - `num` is an array with values `[1, 2, 3, 4]`.
+   - The array has 4 elements, and their indices are `0, 1, 2, 3`.
+
+2. **Adding a Value at Index 100**:
+   - `num[100] = 500` assigns the value `500` to the **100th index** of the array.
+   - Arrays in JavaScript are sparse, which means they can have "gaps" where no elements are defined.
+   - JavaScript will leave all the indices between `3` (the last defined index of the original array) and `100` **empty/undefined**.
+
+3. **Resulting Array**:
+   - The array now looks like this:
+     ```javascript
+     [1, 2, 3, 4, <96 empty items>, 500]
+     ```
+   - There are 96 "empty slots" between the 4th index (last original element) and the 100th index.
+
+4. **Output of `console.log(num)`**:
+   - When you log the array, JavaScript shows:
+     ```javascript
+     [1, 2, 3, 4, ...empty x 96, 500]
+     ```
+   - This indicates that the array has 96 empty slots.
+
+---
+
+### Key Points:
+- **Array length**: When you set `num[100]`, the array's length automatically becomes `101` (indices 0 to 100).
+- **Sparse arrays**: JavaScript doesn't fill the gap with anything; the "missing" indices are just undefined.
+
+-------------------------------------------
+
+3. **What is the output of the following code?**
+
+### Code:
+```javascript
+console.log(typeof typeof 100);
+```
+
+### Step-by-Step Explanation:
+
+1. **`typeof 100`**:
+   - `typeof` is a JavaScript operator that returns the type of a value as a string.
+   - The value `100` is a number, so:
+     ```javascript
+     typeof 100 // returns "number"
+     ```
+
+2. **`typeof "number"`**:
+   - Now, the second `typeof` operates on the result of the first `typeof`, which is the string `"number"`.
+   - The `typeof` operator applied to any string always returns `"string"`.
+     ```javascript
+     typeof "number" // returns "string"
+     ```
+
+3. **Final Output**:
+   - The result of `typeof typeof 100` is:
+     ```javascript
+     "string"
+     ```
+
+### Output:
+```
+string
+```
+
+4.
+
+### Code:
+```javascript
+const arr = [...'sai'];
+console.log(arr);
+```
+### Explanation:
+
+1. **What is `...'sai'`?**  
+   - The **spread operator (`...`)** in JavaScript is used to spread the elements of an iterable (like a string, array, or object) into individual components.  
+   - A string is an iterable, and each character of the string is treated as an individual element.  
+   - So, `...'sai'` expands into the characters `'s'`, `'a'`, and `'i'`.
+
+2. **Creating an Array**:
+   - Using `[...'sai']`, the spread operator spreads the characters of the string `'sai'` into an array.  
+   - This results in:
+     ```javascript
+     arr = ['s', 'a', 'i'];
+     ```
+
+3. **Logging the Array**:
+   - When you log `arr` with `console.log(arr)`, it outputs:
+     ```javascript
+     ['s', 'a', 'i']
+     ```
+
+---
+
+### Output:
+```
+['s', 'a', 'i']
+```
+
+5.
+### Code:
+```javascript
+console.log(parseInt('10+2'));
+console.log(parseInt('7MF'));
+console.log(parseInt('M7F'));
+```
+### Explanation:
+
+#### **`parseInt` Function:**
+- The `parseInt` function in JavaScript parses a string and converts it into an integer.
+- It stops parsing when it encounters a character that is not a valid part of a number.
+- If the string starts with a non-numeric character, `parseInt` will return `NaN` (Not-a-Number).
+
+---
+
+#### **1. `parseInt('10+2')`**
+- `parseInt` starts reading the string `'10+2'` from left to right.
+- It reads `'10'` as a valid number and stops when it encounters the `+`, which is not a numeric character.
+- Result:
+  ```javascript
+  10
+  ```
+
+---
+
+#### **2. `parseInt('7MF')`**
+- `parseInt` starts reading the string `'7MF'`.
+- It reads `'7'` as a valid number and stops when it encounters the `M`, which is not a numeric character.
+- Result:
+  ```javascript
+  7
+  ```
+
+---
+
+#### **3. `parseInt('M7F')`**
+- `parseInt` starts reading the string `'M7F'`.
+- Since the first character `M` is not a numeric character, `parseInt` cannot parse it and returns `NaN`.
+- Result:
+  ```javascript
+  NaN
+  ```
+
+---
+
+### Final Output:
+```
+10
+7
+NaN
+```
