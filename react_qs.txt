@@ -39,11 +39,18 @@ ans: It is a mechanism to compare the old virtual DOM with the new virtual DOM a
 ReactJS Reconciliation
 ans:React Reconciliation is the process through which React updates the Browser DOM. It makes the DOM updates faster in React. It updates the virtual DOM first and then uses the diffing algorithm to make efficient and optimized updates in the Real DOM.
 
+how do you handle forms in the react.
+
+
 
 
 what is life cycles in the functional components.
 how can we perform the life cycles in functional components.
 what is df b/w stateful and stateless components.
+what are the controlled and uncontrolled components in react.
+explain what is cookie, localstorage and session storage in react.
+
+
 
 diff b/w props and state.
 explain the state and props in react.
@@ -55,9 +62,19 @@ what is the context and why do we use it.
 diff b/w useMemo and useCallback hooks.
 why do we useRef hook.
 
-
-what is the redux and its functions or components.
-what is the useReducer hook and why do we use it.
+Redux:
+what are the 3 core principles of redux.
+explain the structure of the redux application.
+what is the role of actions in redux. can you provide an example.
+how is the redux store is created and how do you access its state.
+what is the purpose of the connect() in redux.
+what is the role and purpose of the reducer in redux. can you provide an example.
+what is the role and purpose of the middleware in redux. can you provide an example.
+what is the role and purpose of the selector in redux. can you provide an example.
+what is the role and purpose of the thunk in redux. can you provide an example.
+what is the diff b/w StateToProps and mapDispatchToProps in redux.
+how do you handle the async operations in redux.
+explain how you would optimize the performance of the redux application to prevent unnecessary renders.
 
 what are the react-router-dom functions used in the react.
 ans: BrowserRouter, Routes, Route, Link, useNavigate, useParms,

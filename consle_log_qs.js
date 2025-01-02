@@ -1,12 +1,27 @@
+//The loose equality operator (==) compares two values for equality, performing type coercion if the types differ.
+
+//Steps for true == '': true is converted to the number 1.''(empty string) is converted to the number 0. Comparison: 1 == 0 → false.
+
 // console.log("" == false); //true
-//  because of type coercion and check by the reference of value in the memory
+// console.log(true == '');
+
+// console.log(true == 1);   // true
+// console.log(false == 0);  // true
+// console.log('' == 0);     // true
+// console.log(true == '1'); // true
+
+// === (Strict Equality):
+
+//The strict equality operator(===) compares two values for equality without type coercion.
+//For true === '', since the types(boolean and string) are different, the comparison immediately evaluates to false.
 
 // console.log("" === false);//false
-// because of check by the value
+//console.log(true === ''); // false
+// console.log(true === 1);   // false
+// console.log(false === 0);  // false
+// console.log('' === 0);     // false
+// console.log(true === '1'); // false
 
-
-//console.log(false == 0) // true
-// false is equal to 0 in terms of value comparison.
 
 // console.log(1 + undefined); // NaN
 

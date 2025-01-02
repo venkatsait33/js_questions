@@ -1,0 +1,276 @@
+what are the data types in javascript?
+explain the diff b/w null and undefined in javascript.
+explain the diff b/w == and === in javascript.
+explain the diff b/w var, let and const in javascript.
+explain synchronous and asynchronous in javascript.
+explain the diff b/w callback, promise and async await in javascript.
+explain 
+explain what is shallow copy and deep copy in javascript.
+explain currying in javascript.
+explain diff b/w infinite currying and normal currying.
+explain the concept of closure in javascript.
+explain the concept of hoisting in javascript.
+explain the concept of scopes in js.
+explain the high order functions in javascript.
+explain the event loop in javaScript.
+how does a keyword work in javascript?
+explain diff b/w forEach and map methods in arrays.
+what are purpose of the promises and how do you use them.
+what is the purpose of the setTimeOut() and setInterval() functions in javascript?
+what is diff b/w function and arrow function and where do we use them.
+what are modules in javascript?how do you use them?
+what is JSON and how do we parse it.
+explain what is cookie, localstorage and session storage in javaScript.
+what are REST APIs?
+explain the purpose of the HTTP status codes in API response.
+what are diff b/w GET and POST methods in API?
+
+
+
+### 1. What is JSON, and why is it used in APIs?
+JSON (JavaScript Object Notation) is a lightweight format for storing and exchanging data. It is easy for humans to read and write and for machines to parse and generate. APIs commonly use JSON to send structured data between the server and client.
+
+Example JSON:
+```json
+{
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+}
+```
+
+---
+
+### 2. Differences Between REST and GraphQL
+| Feature            | REST                                   | GraphQL                                |
+|---------------------|----------------------------------------|-----------------------------------------|
+| **Endpoints**       | Multiple endpoints for each resource. | Single endpoint for all operations.    |
+| **Data Retrieval**  | Can over-fetch or under-fetch data.   | Queries fetch exactly what is needed.  |
+| **Flexibility**     | Less flexible.                       | More flexible for client needs.        |
+| **Versioning**      | Requires new versions for changes.    | Avoids versioning by schema evolution. |
+
+---
+
+### 3. How do you handle API errors in JavaScript?
+Use `try...catch` blocks and check HTTP status codes to manage errors gracefully.
+
+Example:
+```javascript
+try {
+    const response = await fetch('https://api.example.com/data');
+    if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+} catch (error) {
+    console.error(error.message);
+}
+```
+
+---
+
+### 4. Explain the Concept of CORS (Cross-Origin Resource Sharing)
+CORS is a security feature in web browsers that restricts how resources on one domain can be accessed by another domain unless explicitly allowed by the server through HTTP headers.
+
+Example:
+A client running on `http://example-client.com` cannot fetch resources from `http://example-server.com` unless the server permits it using CORS headers like:
+```http
+Access-Control-Allow-Origin: http://example-client.com
+```
+
+---
+
+### 5. How to Fetch Data from a REST API Using JavaScript?
+You can use `fetch` or libraries like `axios` to make API calls.
+
+**Using Fetch:**
+```javascript
+fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+```
+
+**Using Axios:**
+```javascript
+import axios from 'axios';
+
+axios.get('https://api.example.com/data')
+    .then(response => console.log(response.data))
+    .catch(error => console.error('Error:', error));
+```
+
+---
+
+### 6. What are HTTP Methods Commonly Used in REST APIs?
+- **GET**: Retrieve data from the server.
+- **POST**: Send data to the server to create a resource.
+- **PUT**: Update an existing resource entirely.
+- **PATCH**: Update part of an existing resource.
+- **DELETE**: Remove a resource from the server.
+
+---
+
+### 7. What is the Role of Headers in API Requests?
+Headers provide additional information about the request or response. Examples include:
+- **Content-Type**: Specifies the type of data being sent (e.g., `application/json`).
+- **Authorization**: Contains credentials for authentication (e.g., Bearer tokens).
+- **Accept**: Specifies the type of data expected in the response.
+
+---
+
+### 8. What is API Throttling?
+API throttling limits the number of API requests a client can make in a given time period. This helps prevent abuse and ensures fair usage for all clients.
+
+---
+
+### 9. What is a CRUD Operation?
+CRUD stands for Create, Read, Update, and Delete. These are the four basic operations for managing resources in a RESTful API.
+
+| Operation | HTTP Method |
+|-----------|-------------|
+| Create    | POST        |
+| Read      | GET         |
+| Update    | PUT/PATCH   |
+| Delete    | DELETE      |
+
+---
+
+### 10. What is the Difference Between Synchronous and Asynchronous APIs?
+- **Synchronous APIs**: The client waits for the server to respond before continuing. 
+- **Asynchronous APIs**: The client does not wait for the server response and can execute other tasks. Responses are handled via callbacks, promises, or `async/await`.
+
+---
+
+This document provides an overview of essential REST API concepts and answers to commonly asked interview questions for freshers in frontend development. With these insights, you'll be better prepared for your JavaScript interviews!
+
+---
+
+# JavaScript: Core Concepts and Interview Questions
+
+### 1. Data Types in JavaScript
+JavaScript has the following data types:
+- **Primitive Data Types**:
+  - Number
+  - String
+  - Boolean
+  - Undefined
+  - Null
+  - Symbol
+  - BigInt
+- **Non-Primitive Data Type**:
+  - Object (includes Arrays, Functions, and Objects)
+
+---
+
+### 2. Difference Between `null` and `undefined`
+- **`null`**: Represents the intentional absence of any value. It is an object.
+- **`undefined`**: Indicates that a variable has been declared but not assigned a value.
+
+Example:
+```javascript
+let x = null; // explicitly set to "nothing"
+let y;       // declared but not initialized
+console.log(x); // null
+console.log(y); // undefined
+```
+
+---
+
+### 3. Difference Between `==` and `===`
+- **`==`**: Checks for value equality, performing type coercion if necessary.
+- **`===`**: Checks for strict equality, ensuring both value and type are the same.
+
+Example:
+```javascript
+console.log(5 == '5');  // true
+console.log(5 === '5'); // false
+```
+
+---
+
+### 4. Difference Between `var`, `let`, and `const`
+- **`var`**: Function-scoped, can be redeclared and updated, prone to hoisting issues.
+- **`let`**: Block-scoped, can be updated but not redeclared.
+- **`const`**: Block-scoped, cannot be updated or redeclared.
+
+Example:
+```javascript
+var x = 10;
+let y = 20;
+const z = 30;
+```
+
+---
+
+### 5. Synchronous vs Asynchronous in JavaScript
+- **Synchronous**: Code is executed sequentially, one task at a time.
+- **Asynchronous**: Tasks run independently, allowing non-blocking operations.
+
+---
+
+### 6. Difference Between Callback, Promise, and Async/Await
+- **Callback**: A function passed as an argument to another function, executed after a task completes.
+- **Promise**: Represents the eventual completion (or failure) of an asynchronous operation.
+- **Async/Await**: Simplifies promise handling with `async` functions and `await` keywords.
+
+---
+
+### 7. Shallow Copy vs Deep Copy
+- **Shallow Copy**: Copies only the first level of data.
+- **Deep Copy**: Recursively copies all levels of data.
+
+---
+
+### 8. Currying
+Breaking a function into multiple functions that take one argument at a time.
+
+---
+
+### 9. Infinite Currying vs Normal Currying
+- **Normal Currying**: Stops after all arguments are provided.
+- **Infinite Currying**: Continues to take arguments indefinitely.
+
+---
+
+### 10. Closure in JavaScript
+A closure is a function that remembers its outer scope even after the outer function has executed.
+
+---
+
+### 11. Hoisting
+Variables and function declarations are moved to the top of their scope before code execution.
+
+---
+
+### 12. Scopes in JavaScript
+- **Global Scope**: Accessible anywhere.
+- **Local/Function Scope**: Accessible only inside a function.
+- **Block Scope**: Variables declared with `let` or `const` are confined to the block.
+
+---
+
+### 13. Higher-Order Functions
+Functions that take other functions as arguments or return functions.
+
+---
+
+### 14. Event Loop
+Manages asynchronous tasks by executing them in the event queue when the call stack is empty.
+
+---
+
+### 15. Keywords in JavaScript
+Reserved words with special meanings, e.g., `var`, `let`, `if`, `return`, etc.
+
+---
+
+### 16. Difference Between `forEach` and `map`
+- **`forEach`**: Executes a function for each array element; does not return a new array.
+- **`map`**: Returns a new array with the results of a function applied to each element.
+
+---
+
+### 17. Purpose of Promises
+

@@ -67,7 +67,7 @@
 //     console.log(a + b);
 
 // }
-// console.log(sum1(undefined,20)); // 120 undefined
+// console.log(sum1(undefined,20)); // 20 undefined
 
 // -------------------------------------
 
@@ -193,11 +193,11 @@
 //Currying is a technique where a function is broken down into a sequence of functions, each taking a single argument.
 
 // function recursiveCurring(a) {
-    //Recursive Function Calls:
-     //The function abc calls itself recursively with the updated value of a until the base condition is met.
+//Recursive Function Calls:
+//The function abc calls itself recursively with the updated value of a until the base condition is met.
 //     return function xyz(b) {
 //         if (!b) return a
-         //The condition if (!b) ensures that the recursion stops when b is undefined or another falsy value.
+//The condition if (!b) ensures that the recursion stops when b is undefined or another falsy value.
 //         return recursiveCurring(a + b)
 
 //     }
@@ -245,3 +245,39 @@
 // It checks if the second argument b is provided: If b is provided, it immediately returns the sum a + b.
 // If b is not provided, it returns a new function that takes b as its argument.This allows for currying.
 //-------------------------------------------------------
+
+// function f1(){
+//     return 2
+// }
+// function f2(){
+//     return 4
+// }
+
+// let a = (f1(), f2())
+
+//The comma operator evaluates multiple expressions and returns the value of the last expression
+
+//console.log(a) // 4
+
+//------------------------------------------------------
+
+// const arr = ['one', 'two', 'three']
+// const str = 'hello'
+
+// const res = arr.includes('on')
+// const res1 = arr.includes('onetwo')
+// const string = arr.includes('ll')
+
+//The includes method checks for an exact match of an element in an array or substring in a string.
+
+// console.log(res)
+// console.log(res1)
+// console.log(string)
+
+
+//------------------------------------------------------
+
+
+
+
+
