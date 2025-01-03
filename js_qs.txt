@@ -1,30 +1,165 @@
-what are the data types in javascript?
-explain the diff b/w null and undefined in javascript.
-explain the diff b/w == and === in javascript.
-explain the diff b/w var, let and const in javascript.
-explain synchronous and asynchronous in javascript.
-explain the diff b/w callback, promise and async await in javascript.
-explain 
-explain what is shallow copy and deep copy in javascript.
+# JavaScript: Core Concepts and Interview Questions
+
+### 1. Data Types in JavaScript
+JavaScript has the following data types:
+- **Primitive Data Types**:
+  - Number
+  - String
+  - Boolean
+  - Undefined
+  - Null
+  - Symbol
+  - BigInt
+- **Non-Primitive Data Type**:
+  - Object (includes Arrays, Functions, and Objects)
+
+---
+
+### 2. Difference Between `null` and `undefined`
+- **`null`**: Represents the intentional absence of any value. It is an object.
+- **`undefined`**: Indicates that a variable has been declared but not assigned a value.
+
+Example:
+```javascript
+let x = null; // explicitly set to "nothing"
+let y;       // declared but not initialized
+console.log(x); // null
+console.log(y); // undefined
+```
+
+---
+
+### 3. Difference Between `==` and `===`
+- **`==`**: Checks for value equality, performing type coercion if necessary.
+- **`===`**: Checks for strict equality, ensuring both value and type are the same.
+
+Example:
+```javascript
+console.log(5 == '5');  // true
+console.log(5 === '5'); // false
+```
+
+---
+
+### 4. Difference Between `var`, `let`, and `const`
+- **`var`**: Function-scoped, can be redeclared and updated, prone to hoisting issues.
+- **`let`**: Block-scoped, can be updated but not redeclared.
+- **`const`**: Block-scoped, cannot be updated or redeclared.
+
+Example:
+```javascript
+var x = 10;
+let y = 20;
+const z = 30;
+```
+
+---
+
+### 5. Synchronous vs Asynchronous in JavaScript
+- **Synchronous**: Code is executed sequentially, one task at a time.
+- **Asynchronous**: Tasks run independently, allowing non-blocking operations.
+
+---
+
+### 6. Difference Between Callback, Promise, and Async/Await
+- **Callback**: A function passed as an argument to another function, executed after a task completes.
+- **Promise**: Represents the eventual completion (or failure) of an asynchronous operation.
+- **Async/Await**: Simplifies promise handling with `async` functions and `await` keywords.
+
+---
+
+## explain what is shallow copy and deep copy in javascript.
+ans: shallow copy is a copy of the object that contains references to the original object's properties when update the copied arguments it also update the original object. deep copy is a copy of the object that contains copies of the original object's properties.
+---
+
 explain currying in javascript.
+ans: currying is a technique of transforming a function with multiple arguments into a series of functions with a single argument. it is used to make the function more flexible and reusable.
+---
+
 explain diff b/w infinite currying and normal currying.
 explain the concept of closure in javascript.
-explain the concept of hoisting in javascript.
-explain the concept of scopes in js.
-explain the high order functions in javascript.
-explain the event loop in javaScript.
-how does a keyword work in javascript?
-explain diff b/w forEach and map methods in arrays.
-what are purpose of the promises and how do you use them.
-what is the purpose of the setTimeOut() and setInterval() functions in javascript?
-what is diff b/w function and arrow function and where do we use them.
-what are modules in javascript?how do you use them?
-what is JSON and how do we parse it.
-explain what is cookie, localstorage and session storage in javaScript.
-what are REST APIs?
-explain the purpose of the HTTP status codes in API response.
-what are diff b/w GET and POST methods in API?
+ans: closure is a function that remembers the variables from its lexical scope even when the function is executed outside that scope. it is used to create private variables and functions.
+---
 
+explain the concept of prototype in javascript.
+ans: prototype is an object that is associated with every object in javascript. it is used to share properties and methods between objects.
+---
+
+explain the concept of hoisting in javascript.
+ans: hoisting is a mechanism in javascript where variables and function declarations are moved to the top of their containing scope before code execution. it is used to make the code more readable and easier to understand.
+---
+
+explain the concept of this in javascript.
+ans: this is a keyword in javascript that refers to the object that is executing the current function. it can have different values depending on the context in which it is used.
+---
+
+explain the concept of event delegation in javascript.
+ans: event delegation is a technique in javascript where events are handled by a parent element instead of individual child elements. it is used to reduce the number of event listeners and improve performance.
+---
+
+explain the concept of scopes in js.
+ans: scope is a region of code where a variable is defined and can be accessed. there are three types of scopes in javascript: global scope, function scope and block scope.
+---
+
+explain the high order functions in javascript.
+ans: High order functions are functions that can take other functions as arguments and/or return functions as their results.
+---
+
+explain the event loop in javaScript.
+ans: How the Event Loop Works
+   1. JavaScript starts executing code from the top of the script.
+   2. Synchronous tasks are added to and executed in the call stack.
+   3. When an asynchronous task is encountered (e.g., setTimeout), it is handed over to the Web APIs, and execution continues.
+   4. Once the Web API completes the task, it moves the callback to the callback queue or microtask queue (depending on the type of asynchronous operation).
+ The event loop:
+  1.First checks if the call stack is empty.
+  2.Executes all pending microtasks (from the microtask queue).
+  3.Then, moves the next task from the callback queue to the call stack.
+  ---
+
+
+how does a keyword work in javascript?
+ans: In JavaScript, the this keyword is a special identifier that dynamically refers to the object that is currently executing a function. Its value depends on the context in which the function is called, and it can behave differently in various situations.
+---
+
+explain diff b/w forEach and map methods in arrays.
+ans:
+ Use forEach when you need to iterate over the array for side effects (e.g., logging or updating variables), and you don't need to transform the array.
+ Use map when you want to create a new array based on the transformation of the original array's elements, without modifying the original array.
+ ---
+
+what are purpose of the promises and how do you use them.
+ans: Promises in JavaScript are used to handle asynchronous operations and manage the flow of code execution. They represent the eventual completion (or failure) of an asynchronous operation and its resulting value.
+---
+
+what is the purpose of the setTimeOut() and setInterval() functions in javascript?
+ans: The setTimeout() function in JavaScript is used to execute a specified function or code snippet after a specified delay (in milliseconds). It returns a unique identifier for the timeout, which can be used to cancel the timeout using the clearTimeout() function.
+
+The setInterval() function in JavaScript is used to repeatedly execute a specified function or code snippet at a specified interval (in milliseconds). It returns a unique identifier for the interval, which can be used to cancel the interval using the clearInterval() function.
+---
+
+what is the purpose of the map() function in javascript?
+ans: The map() function in JavaScript is used to create a new array by applying a specified function to each element of an existing array. It returns a new array with the transformed elements, without modifying the original array.
+---
+
+what is the purpose of the filter() function in javascript?
+ans: The filter() function in JavaScript is used to create a new array by filtering the elements of an existing array based on a specified condition. It returns a new array with the elements that satisfy the condition, without modifying the original array.
+---
+
+what is diff b/w function and arrow function and where do we use them.
+
+ans: function and arrow function are both ways to define functions in JavaScript, but they have some differences in syntax and behavior.
+
+ function code is more traditional and is used when you need to use the this keyword or when you need to define a function with a name or create constructor function using the new keyword.
+
+ arrow function is a more concise way to define a function and does not have its own this keyword. It inherits the this value from the surrounding code.
+ ---
+
+what are modules in javascript?how do you use them?
+ans: In JavaScript, modules are a way to structure and organize your code into separate files, allowing you to encapsulate functionality and reuse code across different parts of your application. A module typically contains a set of related functions, classes, or variables. JavaScript modules allow you to export code from one file and import it into another, helping to keep code clean and maintainable.
+  ES6 Modules use export and import and are the modern approach to modules in JavaScript.
+  CommonJS Modules use module.exports and require() and are typically used in Node.js applications.
+---  
 
 
 ### 1. What is JSON, and why is it used in APIs?
@@ -146,131 +281,4 @@ CRUD stands for Create, Read, Update, and Delete. These are the four basic opera
 This document provides an overview of essential REST API concepts and answers to commonly asked interview questions for freshers in frontend development. With these insights, you'll be better prepared for your JavaScript interviews!
 
 ---
-
-# JavaScript: Core Concepts and Interview Questions
-
-### 1. Data Types in JavaScript
-JavaScript has the following data types:
-- **Primitive Data Types**:
-  - Number
-  - String
-  - Boolean
-  - Undefined
-  - Null
-  - Symbol
-  - BigInt
-- **Non-Primitive Data Type**:
-  - Object (includes Arrays, Functions, and Objects)
-
----
-
-### 2. Difference Between `null` and `undefined`
-- **`null`**: Represents the intentional absence of any value. It is an object.
-- **`undefined`**: Indicates that a variable has been declared but not assigned a value.
-
-Example:
-```javascript
-let x = null; // explicitly set to "nothing"
-let y;       // declared but not initialized
-console.log(x); // null
-console.log(y); // undefined
-```
-
----
-
-### 3. Difference Between `==` and `===`
-- **`==`**: Checks for value equality, performing type coercion if necessary.
-- **`===`**: Checks for strict equality, ensuring both value and type are the same.
-
-Example:
-```javascript
-console.log(5 == '5');  // true
-console.log(5 === '5'); // false
-```
-
----
-
-### 4. Difference Between `var`, `let`, and `const`
-- **`var`**: Function-scoped, can be redeclared and updated, prone to hoisting issues.
-- **`let`**: Block-scoped, can be updated but not redeclared.
-- **`const`**: Block-scoped, cannot be updated or redeclared.
-
-Example:
-```javascript
-var x = 10;
-let y = 20;
-const z = 30;
-```
-
----
-
-### 5. Synchronous vs Asynchronous in JavaScript
-- **Synchronous**: Code is executed sequentially, one task at a time.
-- **Asynchronous**: Tasks run independently, allowing non-blocking operations.
-
----
-
-### 6. Difference Between Callback, Promise, and Async/Await
-- **Callback**: A function passed as an argument to another function, executed after a task completes.
-- **Promise**: Represents the eventual completion (or failure) of an asynchronous operation.
-- **Async/Await**: Simplifies promise handling with `async` functions and `await` keywords.
-
----
-
-### 7. Shallow Copy vs Deep Copy
-- **Shallow Copy**: Copies only the first level of data.
-- **Deep Copy**: Recursively copies all levels of data.
-
----
-
-### 8. Currying
-Breaking a function into multiple functions that take one argument at a time.
-
----
-
-### 9. Infinite Currying vs Normal Currying
-- **Normal Currying**: Stops after all arguments are provided.
-- **Infinite Currying**: Continues to take arguments indefinitely.
-
----
-
-### 10. Closure in JavaScript
-A closure is a function that remembers its outer scope even after the outer function has executed.
-
----
-
-### 11. Hoisting
-Variables and function declarations are moved to the top of their scope before code execution.
-
----
-
-### 12. Scopes in JavaScript
-- **Global Scope**: Accessible anywhere.
-- **Local/Function Scope**: Accessible only inside a function.
-- **Block Scope**: Variables declared with `let` or `const` are confined to the block.
-
----
-
-### 13. Higher-Order Functions
-Functions that take other functions as arguments or return functions.
-
----
-
-### 14. Event Loop
-Manages asynchronous tasks by executing them in the event queue when the call stack is empty.
-
----
-
-### 15. Keywords in JavaScript
-Reserved words with special meanings, e.g., `var`, `let`, `if`, `return`, etc.
-
----
-
-### 16. Difference Between `forEach` and `map`
-- **`forEach`**: Executes a function for each array element; does not return a new array.
-- **`map`**: Returns a new array with the results of a function applied to each element.
-
----
-
-### 17. Purpose of Promises
 

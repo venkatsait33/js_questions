@@ -26,12 +26,16 @@ what is props in react.
 ans: Props is a built-in object in react which contains the data and it is immutable.
 
 what is the difference between state and props.
-ans: State is a built-in object in react which contains the data and it is mutable. Props is a built-in object in react which contains the data and it is immutable.
+ans: state can update the data in the state but props cannot update the data in the props.
 
 why the key used for map or filter function rendering data and showing the list items.
-what is the react component.
-how do optimize the react application.
+and: Key is used to identify the unique element in the list and it is used to optimize the rendering of the list items.
 
+what is the react component.
+ans: React component is a reusable piece of code which is used to create a reusable UI.
+
+how do optimize the react application.
+ans: we can optimize the react application by using the lazy loading of images,components, code splitting, memoization, and using the hooks.
 
 What is Diffing Algorithm?
 ans: It is a mechanism to compare the old virtual DOM with the new virtual DOM and find out the differences between them. It is a mechanism to optimize the performance of the application.
@@ -42,39 +46,125 @@ ans:React Reconciliation is the process through which React updates the Browser 
 how do you handle forms in the react.
 
 
-
-
 what is life cycles in the functional components.
-how can we perform the life cycles in functional components.
-what is df b/w stateful and stateless components.
-what are the controlled and uncontrolled components in react.
-explain what is cookie, localstorage and session storage in react.
+ans: In functional components, we can perform the life cycles using hooks. The most commonly used hooks are useEffect and useState.
 
+how can we perform the life cycles in functional components.
+ans: Here are concise definitions for lifecycle methods in functional components using React Hooks:
+
+1. **ComponentDidMount (Mounting Phase)**  
+   Runs once when the component is mounted (added to the DOM). In functional components, this is achieved using `useEffect` with an empty dependency array (`[]`).
+
+   ```javascript
+   useEffect(() => {
+       // Code to run on mount
+   }, []);
+   ```
+
+2. **ComponentDidUpdate (Updating Phase)**  
+   Runs after the component updates due to changes in props or state. This is achieved using `useEffect` with specific dependencies in the dependency array.
+
+   ```javascript
+   useEffect(() => {
+       // Code to run when 'dependency' changes
+   }, [dependency]);
+   ```
+
+3. **ComponentWillUnmount (Unmounting Phase)**  
+   Runs when the component is about to unmount (removed from the DOM). In functional components, this is handled by returning a cleanup function from `useEffect`.
+
+   ```javascript
+   useEffect(() => {
+       // Code to run on mount
+       return () => {
+           // Cleanup code to run on unmount
+       };
+   }, []);
+   ```
+
+These lifecycle equivalents in functional components are implemented using the `useEffect` hook, making it a versatile tool for handling side effects and lifecycle events.
+
+what is df b/w stateful and stateless components.
+ans: stateful components are those which have state and stateless components are those which do not have state  and rely solely on props for rendering.
+
+what are the controlled and uncontrolled components in react.
+ans: A controlled component is a form element (e.g., input, textarea, select) whose value is controlled by React state. An uncontrolled component is a form element that manages its own state internally and is accessed using a ref to retrieve the current value.
+
+explain what is cookie, localstorage and session storage in react.
+ans: cookie is a small piece of data that is stored on the both client and server for validation and authentication of user.
+ Local storage is a web storage API that allows you to store data on the user's computer for a long time. Session storage is a web storage API that allows you to store data on the user's computer for the duration of the session.
 
 
 diff b/w props and state.
+ans: Props are immutable and state is mutable. Props are passed from the parent component to the child component and state is used to store the data in the component.
+
 explain the state and props in react.
+ans: props are the properties that are passed from the parent component to the child component. State is the data that is stored in the component and can be changed using the setState() method.
 
 what are the hooks and why do we use it.
+ans: hooks are inbuilt functions in the react which are introduced in 16.2 update version. Hooks are used to add state and update state.
+
 what is the useState hook and why do we use it.
+ans: useState is a hook is used to setData and update the data of state according to function as required.
+
 what is the useEffect hook and why do we use it.
-what is the context and why do we use it.
+ans: useEffect is used to render the application for initial state update and perform the fetchData from the apis, update the ui according to the data and also perform the cleanup activities. we can update the ui and state by adding dependencies in the useEffect hook.if there is any change or update in the dependencies it will call useEffect hook and update the ui and state.
+
+what is the useReducer hook and why do we use it.
+ans: useReducer is used to manage the state of the application. it is similar to useState hook but it is used to manage the complex state of the application. it is used to manage the state of the application in a more efficient way.
+
+what is the useContext hook and why do we use it.
+ans: useContext is used to share the state between the components. it is used to share the state between the components without using the props drilling. it is used to share the state between the components in a more efficient way.
+
 diff b/w useMemo and useCallback hooks.
-why do we useRef hook.
+ans: useMemo and useCallback are used to optimize the performance of the application.
+ useMemo is used to optimize the performance of the application by memoizing the values. it is used to optimize the performance of the application by memoizing the values. 
+useCallback is used to optimize the performance of the application by memoizing the functions. it is used to optimize the performance of the application by memoizing the functions.
+
+what is the useRef hook.
+ans: useRef is used to create a mutable reference to a DOM element or a value. it is used to create a mutable reference to a DOM element or a value. it is used to create a mutable reference to a DOM element or a value.
 
 Redux:
 what are the 3 core principles of redux.
+ans: The 3 core principles of redux are: Single source of truth, State is read-only, Changes are made with pure functions.
+
 explain the structure of the redux application.
+ans: The structure of the redux application is as follows: Action, Reducer, Store, Provider, and Component.
+
 what is the role of actions in redux. can you provide an example.
+ans: The role of actions in redux is to describe the change that needs to be made to the state. An action is an object that has a type property and a payload property. For example, an action can be used to increment the count of a counter.
+
+what is the role of reducers in redux. can you provide an example.
+ans: The role of reducers in redux is to take the current state and an action as arguments and return a new state. A reducer is a pure function that takes the current state and an action as arguments and returns a new state. For example, a reducer can be used to increment the count of a counter.
+
+what is the role of the store in redux. can you provide an example.
+ans: The role of the store in redux is to hold the application state and provide methods to access and update the state. The store is created using the createStore() function and it takes a reducer as an argument. For example, the store can be used to hold the state of a counter.
 how is the redux store is created and how do you access its state.
+ans: The redux store is created using the createStore() function and it takes a reducer as an argument. For example, the store can be used to hold the state of a counter.
+
+what is the role of the provider in redux. can you provide an example.
+ans: The role of the provider in redux is to make the store available to the components in the application. The provider is a component that takes the store as a prop and makes it available to all the components in the application. For example, the provider can be used to make the store available to all the components in the application.
+
 what is the purpose of the connect() in redux.
-what is the role and purpose of the reducer in redux. can you provide an example.
+ans: The connect() function is used to connect a React component to the Redux store. It takes two arguments, mapStateToProps and mapDispatchToProps, which are used to map the state and dispatch to the props of the component. For example, the connect() function can be used to connect a counter component to the Redux store and map the state and dispatch to the props of the component.
+
 what is the role and purpose of the middleware in redux. can you provide an example.
+ans: The role and purpose of the middleware in redux is to handle side effects and asynchronous actions. Middleware is a function that takes the store as an argument and returns a new store with additional functionality. For example, the redux-thunk middleware can be used to handle asynchronous actions and side effects.
+
 what is the role and purpose of the selector in redux. can you provide an example.
+ans: The role and purpose of the selector in redux is to extract data from the state and return it to the component. Selectors are used to create reusable and composable functions that can be used to extract data from the state. For example, a selector can be used to extract the current count from the state and return it to the component.
+
 what is the role and purpose of the thunk in redux. can you provide an example.
+ans: The role and purpose of the thunk in redux is to handle asynchronous actions and side effects. Thunks are functions that can be used to dispatch actions to the store. For example, a thunk can be used to fetch data from an API and dispatch an action to the store with the fetched data.
+
 what is the diff b/w StateToProps and mapDispatchToProps in redux.
+ans: 
+
 how do you handle the async operations in redux.
+ans: You can handle async operations in redux by using middleware like redux-thunk or redux-saga. These middleware allow you to dispatch actions that return a function instead of an action object. The function can then be used to perform async operations like fetching data from an API and dispatching actions to the store with the fetched data.
+
 explain how you would optimize the performance of the redux application to prevent unnecessary renders.
+ans: You can optimize the performance of the redux application by using techniques like memoization and lazy loading. Memoization is a technique that caches the results of expensive function calls and returns the cached result when the same input is provided again. Lazy loading is a technique that delays the loading of components until they are needed. By using these techniques, you can reduce the number of renders and improve the performance of the application.
 
 what are the react-router-dom functions used in the react.
 ans: BrowserRouter, Routes, Route, Link, useNavigate, useParms,
