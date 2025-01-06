@@ -161,6 +161,63 @@ ans: In JavaScript, modules are a way to structure and organize your code into s
   CommonJS Modules use module.exports and require() and are typically used in Node.js applications.
 ---  
 
+What is the difference between every() and some() methods in JavaScript ?
+ans:
+The Array.every() method in JavaScript is used to check whether all the elements of the array satisfy the given condition or not. The output will be false if even one value does not satisfy the element, else it will return true, and it opposes the some() function.
+
+// JavaScript code for every() function
+function isodd(element, index, array) {
+    return (element % 2 == 1);
+}
+ 
+function geeks() {
+    let arr = [6, 1, 8, 32, 35];
+ 
+    // check for odd number
+    let value = arr.every(isodd);
+    console.log(value);
+}
+geeks();
+// Output: false
+
+The Array.some() method in JavaScript is used to check whether at least one of the elements of the array satisfies the given condition or not. and it accepts true/false boolean expressions, The only difference is that the some() method will return true if any predicate is true while every() method will return true if all predicates are true. 
+
+function isodd(element, index, array) {
+    return (element % 2 == 1);
+}
+ 
+function geeks() {
+    let arr = [6, 1, 8, 32, 35];
+ 
+    // check for odd number
+    let value = arr.some(isodd);
+    console.log(value);
+}
+geeks();
+// Output: true
+---  
+
+JavaScript Optional Chaining
+ans: JavaScript Optional chaining is a new feature introduced in ES2020 that simplifies the process of accessing properties nested within objects, especially when dealing with potentially null or undefined values. It provides a concise syntax for accessing properties deep within nested objects without encountering errors due to null or undefined values. This helps in writing cleaner and more readable code by reducing the need for explicit null checks and conditionals.
+
+example:
+const user = {
+    name: 'John',
+    address: {
+        city: 'New York',
+        country: 'USA'
+    }
+};
+
+// Without optional chaining
+if (user && user.address && user.address.city) {
+    console.log(user.address.city); // New York
+}
+
+// With optional chaining
+console.log(user?.address?.city); // New York
+
+
 
 ### 1. What is JSON, and why is it used in APIs?
 JSON (JavaScript Object Notation) is a lightweight format for storing and exchanging data. It is easy for humans to read and write and for machines to parse and generate. APIs commonly use JSON to send structured data between the server and client.

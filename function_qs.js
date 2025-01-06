@@ -16,7 +16,7 @@
 // abc is not declared so it shows undefined
 // var abc = 100
 // if use var and declared it will show NaN
-// console.log(xyz);
+// console.log(xyz); // NaN
 // ----------------------------------------------------------------------
 
 // const data = {
@@ -188,42 +188,8 @@
 // console.log(arr.length - 3); // 2
 //For arr, arr.length will be 5, because there are 5 elements in the array: [0, 1, 2, 3, 4].
 //Now, arr.length(which is 5) is subtracted by 3. The result of the expression is 2, so console.log(2) will be executed.
-// -------------------------------------
 
-//Currying is a technique where a function is broken down into a sequence of functions, each taking a single argument.
 
-// function recursiveCurring(a) {
-//Recursive Function Calls:
-//The function abc calls itself recursively with the updated value of a until the base condition is met.
-//     return function xyz(b) {
-//         if (!b) return a
-//The condition if (!b) ensures that the recursion stops when b is undefined or another falsy value.
-//         return recursiveCurring(a + b)
-
-//     }
-// }
-
-// console.log(recursiveCurring(1)(2)(3)(4)(5)())
-//--------------------------------------------
-
-//Infinite Currying:
-// The function continues to chain until an explicit termination(e.g., calling the function without arguments).
-
-// function infiniteCurry(sum = 0) {
-//     return function (num) {
-//         if (num === undefined) return sum; // Termination condition
-//         sum += num;
-//         return infiniteCurry(sum); // Return the same function for chaining
-//     };
-// }
-
-// Usage:
-//console.log(infiniteCurry()(1)(2)(3)(4)()); // Outputs: 10
-//console.log(infiniteCurry()(10)(20)(30)()); // Outputs: 60
-//console.log(infiniteCurry()()); // Outputs: 0
-// if more than two empty () it will given an error of typeerror as infiniteCurry is not a function
-
-//-------------------------------------------------------
 // Handling both normal function calls and curried function calls in one implementation.
 
 // function add(a, b) {
@@ -270,14 +236,10 @@
 
 //The includes method checks for an exact match of an element in an array or substring in a string.
 
-// console.log(res)
-// console.log(res1)
-// console.log(string)
+// console.log(res) // true
+// console.log(res1) // false
+// console.log(string) // false
 
 
-//------------------------------------------------------
-
-
-
-
+//-----------------------------------------------------
 

@@ -78,3 +78,6 @@
 // }
 // i am not there
 
+// ways to write NaN
+// console.log(0 / 0) // output: NaN
+// console.log(1-'a') // output: NaN
