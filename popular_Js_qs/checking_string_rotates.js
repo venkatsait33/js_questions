@@ -5,7 +5,7 @@ function areRotations(str1, str2) {
     return (str1 + str2).includes(str2);
 }
 
-console.log(areRotations("abcde", "dbca")); // true
+console.log(areRotations("abcd", "dbca")); // true
 
 
 //     ### ** Checking if Two Strings are Rotations of Each Other **
