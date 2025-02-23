@@ -1,4 +1,6 @@
 
+// nonRepeatedCharacter or DuplicateCharacter
+
 function printDuplicateChar(str) {
     const charCount = {};
     for (let char of str) {
